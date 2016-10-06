@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Snapdragon Camera
+PRODUCT_PACKAGES += \
+    SnapdragonCamera
+
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
@@ -78,7 +82,7 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="google/shamu/shamu:6.0.1/MMB29Q/2480792:user/release-keys" \
-    PRIVATE_BUILD_DESC="shamu-user 6.0.1 MMB29Q 2480792 release-keys"
+    BUILD_FINGERPRINT="google/shamu/shamu:6.0.1/MOB30W/3031100:user/release-keys" \
+    PRIVATE_BUILD_DESC="shamu-user 6.0.1 MOB30W 3031100 release-keys"
 
-$(call inherit-product, vendor/motorola/shamu/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/motorola/shamu/device-vendor.mk)
